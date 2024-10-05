@@ -2,18 +2,15 @@
 **Uses Xash 2019 and Quake Remake**\
 ***
 
-**Links:**\
-[Discord](https://discordapp.com/invite/RfzyAj7) \
-[Twitter](https://twitter.com/Magic_Nipples) \
-[YouTube](https://www.youtube.com/user/amd889) \
-[Mod DB](https://www.moddb.com/members/amd889) 
-
-**Donations:**\
-[PayPal](https://www.paypal.me/magicnipples)
-
+**Project Credits:**\
+[Magic_Nipples](https://discordapp.com/invite/RfzyAj7) - Project lead\
+overfloater - Quake model sequence data scripting
+zz_denis - SC-55 soundfont for Quake midi theme\
+[eevee](https://c.eev.ee/doom-text-generator/) - Doom text generator\
+[greenhand](https://reshade.me/forum/shader-presentation/4431-heres-a-palletizer-shader#28652) - Doom palette shader\
 
 ***
-**Credits:**\
+**Xash Credits:**\
 [Uncle Mike](https://hlfx.ru/forum/index.php) - Original creator of Xash3D\
 [a1batross](https://github.com/a1batross) - Xash3D FWGS Fork maintainer\
 id Software\
