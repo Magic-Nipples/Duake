@@ -34,5 +34,8 @@
 *.vs
 .vs/
 [Ss]rc/[Bb]uild/
+[Qq]effects/[Mm]svc/[Dd]ebug
+[Qq]effects/[Mm]svc/[Rr]elease
 [Bb]uild/
+[Tt]emp/
 [Dd]ev/
