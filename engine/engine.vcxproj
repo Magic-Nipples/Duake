@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName />
+    <SccLocalPath />
+    <ProjectGuid>{08E7C852-6812-4C62-A6C4-2BA1411BF444}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)..\build\</OutDir>
+    <IntDir>$(SolutionDir)build\$(TargetName)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)..\build\</OutDir>
+    <IntDir>$(SolutionDir)build\$(TargetName)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>./;common;common/imagelib;common/soundlib;server;client;client/vgui;../common;../game_shared;../pm_shared;../utils/vgui/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
+      <BrowseInformation>true</BrowseInformation>
+      <StringPooling>true</StringPooling>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\..\temp\engine\!debug\engine.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <LinkDLL>true</LinkDLL>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>libcmtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <ImportLibrary>$(SolutionDir)build\$(TargetName)\$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>./common/soundlib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>msvcrtd.lib;winmm.lib;mpeg_dbg.lib;legacy_stdio_definitions.lib;../utils/vgui/lib/win32_vc6/vgui.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+      <Outputs>
+      </Outputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>./;common;common/imagelib;common/soundlib;server;client;client/vgui;../common;../game_shared;../pm_shared;../utils/vgui/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CRT_SECURE_NO_WARNINGS;SUPPORT_BSP2_FORMAT;SHOWDEVBUILDZZ;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\..\temp\engine\!release\engine.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>
+      </OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <LinkDLL>true</LinkDLL>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>libc;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <ImportLibrary>$(SolutionDir)build\$(TargetName)\$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>./common/soundlib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>msvcrt.lib;winmm.lib;mpeg.lib;legacy_stdio_definitions.lib;../utils/vgui/lib/win32_vc6/vgui.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <ProgramDatabaseFile>$(SolutionDir)build\$(TargetName)\$(TargetName).pdb</ProgramDatabaseFile>
+    </Link>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+      <Outputs>
+      </Outputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="client\cl_cmds.c" />
+    <ClCompile Include="client\cl_custom.c" />
+    <ClCompile Include="client\cl_debug.c" />
+    <ClCompile Include="client\cl_demo.c" />
+    <ClCompile Include="client\cl_events.c" />
+    <ClCompile Include="client\cl_frame.c" />
+    <ClCompile Include="client\cl_game.c" />
+    <ClCompile Include="client\cl_gameui.c" />
+    <ClCompile Include="client\cl_main.c" />
+    <ClCompile Include="client\cl_netgraph.c" />
+    <ClCompile Include="client\cl_parse.c" />
+    <ClCompile Include="client\cl_pmove.c" />
+    <ClCompile Include="client\cl_qparse.c" />
+    <ClCompile Include="client\cl_remap.c" />
+    <ClCompile Include="client\cl_scrn.c" />
+    <ClCompile Include="client\cl_tent.c" />
+    <ClCompile Include="client\cl_video.c" />
+    <ClCompile Include="client\cl_view.c" />
+    <ClCompile Include="client\gl_alias.c" />
+    <ClCompile Include="client\gl_backend.c" />
+    <ClCompile Include="client\gl_beams.c" />
+    <ClCompile Include="client\gl_cull.c" />
+    <ClCompile Include="client\gl_decals.c" />
+    <ClCompile Include="client\gl_draw.c" />
+    <ClCompile Include="client\gl_frustum.c" />
+    <ClCompile Include="client\gl_image.c" />
+    <ClCompile Include="client\gl_mirror.c" />
+    <ClCompile Include="client\gl_refrag.c" />
+    <ClCompile Include="client\gl_rlight.c" />
+    <ClCompile Include="client\gl_rmain.c" />
+    <ClCompile Include="client\gl_rmath.c" />
+    <ClCompile Include="client\gl_rmisc.c" />
+    <ClCompile Include="client\gl_rpart.c" />
+    <ClCompile Include="client\gl_rsurf.c" />
+    <ClCompile Include="client\gl_sprite.c" />
+    <ClCompile Include="client\gl_studio.c" />
+    <ClCompile Include="client\gl_vidnt.c" />
+    <ClCompile Include="client\gl_warp.c" />
+    <ClCompile Include="client\s_backend.c" />
+    <ClCompile Include="client\s_dsp.c" />
+    <ClCompile Include="client\s_load.c" />
+    <ClCompile Include="client\s_main.c" />
+    <ClCompile Include="client\s_mix.c" />
+    <ClCompile Include="client\s_mouth.c" />
+    <ClCompile Include="client\s_stream.c" />
+    <ClCompile Include="client\s_utils.c" />
+    <ClCompile Include="client\s_vox.c" />
+    <ClCompile Include="client\vgui\vgui_clip.cpp" />
+    <ClCompile Include="client\vgui\vgui_draw.c" />
+    <ClCompile Include="client\vgui\vgui_input.cpp" />
+    <ClCompile Include="client\vgui\vgui_int.cpp" />
+    <ClCompile Include="client\vgui\vgui_surf.cpp" />
+    <ClCompile Include="common\avikit.c" />
+    <ClCompile Include="common\build.c" />
+    <ClCompile Include="common\cfgscript.c" />
+    <ClCompile Include="common\cmd.c" />
+    <ClCompile Include="common\common.c" />
+    <ClCompile Include="common\console.c" />
+    <ClCompile Include="common\con_utils.c" />
+    <ClCompile Include="common\crclib.c" />
+    <ClCompile Include="common\crtlib.c" />
+    <ClCompile Include="common\custom.c" />
+    <ClCompile Include="common\cvar.c" />
+    <ClCompile Include="common\filesystem.c" />
+    <ClCompile Include="common\gamma.c" />
+    <ClCompile Include="common\host.c" />
+    <ClCompile Include="common\host_state.c" />
+    <ClCompile Include="common\hpak.c" />
+    <ClCompile Include="common\imagelib\img_bmp.c" />
+    <ClCompile Include="common\imagelib\img_dds.c" />
+    <ClCompile Include="common\imagelib\img_main.c" />
+    <ClCompile Include="common\imagelib\img_quant.c" />
+    <ClCompile Include="common\imagelib\img_tga.c" />
+    <ClCompile Include="common\imagelib\img_utils.c" />
+    <ClCompile Include="common\imagelib\img_wad.c" />
+    <ClCompile Include="common\infostring.c" />
+    <ClCompile Include="common\input.c" />
+    <ClCompile Include="common\keys.c" />
+    <ClCompile Include="common\library.c" />
+    <ClCompile Include="common\mathlib.c" />
+    <ClCompile Include="common\matrixlib.c" />
+    <ClCompile Include="common\model.c" />
+    <ClCompile Include="common\mod_bmodel.c" />
+    <ClCompile Include="common\mod_dbghulls.c" />
+    <ClCompile Include="common\mod_studio.c" />
+    <ClCompile Include="common\net_buffer.c" />
+    <ClCompile Include="common\net_chan.c" />
+    <ClCompile Include="common\net_encode.c" />
+    <ClCompile Include="common\net_ws.c" />
+    <ClCompile Include="common\pm_debug.c" />
+    <ClCompile Include="common\pm_surface.c" />
+    <ClCompile Include="common\pm_trace.c" />
+    <ClCompile Include="common\soundlib\snd_main.c" />
+    <ClCompile Include="common\soundlib\snd_mp3.c" />
+    <ClCompile Include="common\soundlib\snd_utils.c" />
+    <ClCompile Include="common\soundlib\snd_wav.c" />
+    <ClCompile Include="common\sys_con.c" />
+    <ClCompile Include="common\sys_win.c" />
+    <ClCompile Include="common\titles.c" />
+    <ClCompile Include="common\world.c" />
+    <ClCompile Include="common\zone.c" />
+    <ClCompile Include="gl_smear.c" />
+    <ClCompile Include="server\sv_client.c" />
+    <ClCompile Include="server\sv_cmds.c" />
+    <ClCompile Include="server\sv_custom.c" />
+    <ClCompile Include="server\sv_frame.c" />
+    <ClCompile Include="server\sv_game.c" />
+    <ClCompile Include="server\sv_init.c" />
+    <ClCompile Include="server\sv_log.c" />
+    <ClCompile Include="server\sv_main.c" />
+    <ClCompile Include="server\sv_move.c" />
+    <ClCompile Include="server\sv_phys.c" />
+    <ClCompile Include="server\sv_pmove.c" />
+    <ClCompile Include="server\sv_save.c" />
+    <ClCompile Include="server\sv_world.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="client\client.h" />
+    <ClInclude Include="client\cl_tent.h" />
+    <ClInclude Include="client\gl_export.h" />
+    <ClInclude Include="client\gl_frustum.h" />
+    <ClInclude Include="client\gl_local.h" />
+    <ClInclude Include="client\sound.h" />
+    <ClInclude Include="client\vgui\vgui_draw.h" />
+    <ClInclude Include="client\vgui\vgui_main.h" />
+    <ClInclude Include="client\vox.h" />
+    <ClInclude Include="common\common.h" />
+    <ClInclude Include="common\com_strings.h" />
+    <ClInclude Include="common\crtlib.h" />
+    <ClInclude Include="common\filesystem.h" />
+    <ClInclude Include="common\imagelib\imagelib.h" />
+    <ClInclude Include="common\library.h" />
+    <ClInclude Include="common\mathlib.h" />
+    <ClInclude Include="common\mod_local.h" />
+    <ClInclude Include="common\net_buffer.h" />
+    <ClInclude Include="common\net_encode.h" />
+    <ClInclude Include="common\protocol.h" />
+    <ClInclude Include="common\soundlib\soundlib.h" />
+    <ClInclude Include="common\world.h" />
+    <ClInclude Include="server\server.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
