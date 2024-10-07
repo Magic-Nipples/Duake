@@ -846,6 +846,24 @@ void CBasePlayer::AddPointsToTeam( int score, BOOL bAllowNegativeScore )
 
 void CBasePlayer::PreThink(void)
 {
+	if (!g_progsFound)
+	{
+		CenterPrint(pev, "progs");
+
+		if (pev->health != 0)
+		{
+			UTIL_ScreenFade(this, Vector(0, 0, 0), 5.0f, 0.01f, 255, FFADE_OUT | FFADE_STAYOUT);
+			pev->health = 0;
+			m_flLightningTime = gpGlobals->time + 10.0f;
+		}
+
+		if (m_flLightningTime < gpGlobals->time)
+			SERVER_COMMAND("disconnect\n");
+		
+		m_flNextAttack = 9999;
+		pev->flags |= FL_FROZEN;	
+	}
+
 	int buttonsChanged = (m_afButtonLast ^ pev->button);	// These buttons have changed this frame
 	
 	// Debounced button codes for pressed/released
@@ -1266,7 +1284,7 @@ void CBasePlayer::PostThink()
 		{
 			EMIT_SOUND(ENT(pev), CHAN_BODY, "player/h2ojump.wav", 1, ATTN_NORM);
 		}
-		else if ( m_flFallVelocity > PLAYER_MAX_SAFE_FALL_SPEED )
+		/*else if (m_flFallVelocity > PLAYER_MAX_SAFE_FALL_SPEED)
 		{
 			// after this point, we start doing damage
 			float flFallDamage = g_pGameRules->FlPlayerFallDamage( this );
@@ -1276,7 +1294,7 @@ void CBasePlayer::PostThink()
 				TakeDamage(VARS(eoNullEntity), VARS(eoNullEntity), flFallDamage, DMG_FALL ); 
 				pev->punchangle.x = 0;
 			}
-		}
+		}*/
 
 		if ( IsAlive() )
 			SetAnimation( PLAYER_WALK );

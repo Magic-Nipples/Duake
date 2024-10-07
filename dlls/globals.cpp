@@ -34,3 +34,4 @@ DLL_GLOBAL float		g_intermission_exittime;
 DLL_GLOBAL char		g_sNextMap[64];
 DLL_GLOBAL BOOL		g_registered = FALSE;
 DLL_GLOBAL int		g_iXashEngineBuildNumber;
+DLL_GLOBAL BOOL		g_progsFound;

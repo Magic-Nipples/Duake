@@ -1,5 +1,5 @@
 # Duake source code for Visual Studio 2019
-**Uses Xash 2019 and Quake Remake**\
+**Uses Xash 2019 and Quake Remake**
 ***
 
 **Project Credits:**\
@@ -7,7 +7,7 @@
 overfloater - Quake model sequence data scripting
 zz_denis - SC-55 soundfont for Quake midi theme\
 [eevee](https://c.eev.ee/doom-text-generator/) - Doom text generator\
-[greenhand](https://reshade.me/forum/shader-presentation/4431-heres-a-palletizer-shader#28652) - Doom palette shader\
+[greenhand](https://reshade.me/forum/shader-presentation/4431-heres-a-palletizer-shader#28652) - Doom palette shader
 
 ***
 **Xash Credits:**\

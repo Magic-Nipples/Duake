@@ -1614,6 +1614,9 @@ void PM_Jump (void)
 		return;
 	}
 
+	if (pmove->flags & FL_FROZEN)
+		return;
+
 	// See if we are waterjumping.  If so, decrement count and return.
 	if ( pmove->waterjumptime )
 	{
@@ -1671,8 +1674,8 @@ void PM_Jump (void)
 		return;		// in air, so no effect
 	}
 
-	if ( pmove->oldbuttons & IN_JUMP )
-		return;		// don't pogo stick
+	//if ( pmove->oldbuttons & IN_JUMP )
+	//	return;		// don't pogo stick
 
 	// In the air now.
     pmove->onground = -1;
@@ -1772,11 +1775,11 @@ void PM_CheckFalling( void )
 		if ( pmove->waterlevel > 0 )
 		{
 		}
-		else if ( pmove->flFallVelocity > PLAYER_MAX_SAFE_FALL_SPEED )
+		/*else if (pmove->flFallVelocity > PLAYER_MAX_SAFE_FALL_SPEED)
 		{
 			pmove->PM_PlaySound(CHAN_VOICE, "player/land2.wav", 1, ATTN_NORM, 0, PITCH_NORM);
 			pmove->vuser3[2] = -340;
-		}
+		}*/
 		else
 		{
 			pmove->PM_PlaySound(CHAN_VOICE, "player/use1.wav", 1, ATTN_NORM, 0, PITCH_NORM);

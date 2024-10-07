@@ -432,7 +432,9 @@ void CWorld :: Precache( void )
 
 void CWorld :: Think( void )
 {
-	UTIL_ShowMessageAll( STRING(pev->message) );
+	if(g_progsFound)
+		UTIL_ShowMessageAll( STRING(pev->message) );
+
 	pev->nextthink = -1;
 }
 

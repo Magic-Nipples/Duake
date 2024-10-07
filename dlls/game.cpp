@@ -82,12 +82,11 @@ void COM_CheckRegistered( void )
 	g_registered = FALSE;
 
 	file = LOAD_FILE_FOR_ME("progs.dat", &h);
+
 	if (!file || !h)
-	{
-		ALERT(at_console, "Missing Quake progs.dat\nMissing Quake progs.dat\nMissing Quake progs.dat\n");
-		SERVER_COMMAND("quit\n");
-		return;
-	}
+		g_progsFound = FALSE;
+	else
+		g_progsFound = TRUE;
 
 	file = LOAD_FILE_FOR_ME( "gfx/pop.lmp", &h );
 

@@ -342,6 +342,7 @@ extern DLL_GLOBAL int	g_intermission_running;
 extern DLL_GLOBAL float	g_intermission_exittime;
 extern DLL_GLOBAL char	g_sNextMap[64];
 extern DLL_GLOBAL BOOL	g_registered;
+extern DLL_GLOBAL BOOL	g_progsFound;
 
 //
 // Constants that were used only by QC (maybe not used at all now)
