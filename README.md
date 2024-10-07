@@ -4,7 +4,7 @@
 
 **Project Credits:**\
 [Magic_Nipples](https://discordapp.com/invite/RfzyAj7) - Project lead\
-overfloater - Quake model sequence data scripting
+overfloater - Quake model sequence data scripting\
 zz_denis - SC-55 soundfont for Quake midi theme\
 [eevee](https://c.eev.ee/doom-text-generator/) - Doom text generator\
 [greenhand](https://reshade.me/forum/shader-presentation/4431-heres-a-palletizer-shader#28652) - Doom palette shader

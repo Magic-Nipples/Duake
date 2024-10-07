@@ -268,8 +268,8 @@ class CItemHealth : public CItem
 		if (pev->spawnflags & SF_HEALTH_MEGA)
 		{
 			PRECACHE_MODEL("sprites/items/soulsphere.spr");//PRECACHE_MODEL("progs/b_bh100.bsp");
-			PRECACHE_SOUND("items/r_item2.wav");
-			pev->noise = MAKE_STRING("items/r_item2.wav");
+			PRECACHE_SOUND("items/pickup_powerup.wav");
+			pev->noise = MAKE_STRING("items/pickup_powerup.wav");
 		}
 
 		if (FClassnameIs(pev, "item_health_bonus"))

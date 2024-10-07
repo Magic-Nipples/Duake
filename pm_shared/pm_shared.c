@@ -2217,9 +2217,9 @@ void PM_PlayerMove ( qboolean server )
 			if ( !PM_InWater() )
 				PM_FixupGravityVelocity();
 
-			// If we are on ground, no downward velocity.
-			if ( pmove->onground != -1 )
-				pmove->velocity[2] = 0;
+			// If we are on ground, no downward velocity. //magic nipples - off to enable slope jumps
+			//if ( pmove->onground != -1 )
+				//pmove->velocity[2] = 0;
 
 			// See if we landed on the ground with enough force to play
 			//  a landing sound.
