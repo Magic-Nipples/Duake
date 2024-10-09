@@ -195,19 +195,20 @@ void IN_StartupMouse (void)
 	if ( gEngfuncs.CheckParm ("-nomouse", NULL ) ) 
 		return; 
 
-	mouseinitialized = 1;
-	mouseparmsvalid = SystemParametersInfo (SPI_GETMOUSE, 0, originalmouseparms, 0);
+	//mouseinitialized = 1;
+	//mouseparmsvalid = SystemParametersInfo (SPI_GETMOUSE, 0, originalmouseparms, 0);
 
-	if (mouseparmsvalid)
+	//if (mouseparmsvalid)
 	{
-		//if ( gEngfuncs.CheckParm ("-noforcemspd", NULL ) ) //magic nipples - forcing these mouse options off for now
+		//magic nipples - forcing these mouse options off for now
+		/*if (gEngfuncs.CheckParm("-noforcemspd", NULL))
 			newmouseparms[2] = originalmouseparms[2];
 
-		//if ( gEngfuncs.CheckParm ("-noforcemaccel", NULL ) ) 
+		if ( gEngfuncs.CheckParm ("-noforcemaccel", NULL ) ) 
 		{
 			newmouseparms[0] = originalmouseparms[0];
 			newmouseparms[1] = originalmouseparms[1];
-		}
+		}*/
 
 		//if ( gEngfuncs.CheckParm ("-noforcemparms", NULL ) ) 
 		{
