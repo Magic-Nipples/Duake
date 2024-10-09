@@ -50,7 +50,7 @@ public:
 	static CRocket* CreateBFGBall(Vector vecOrigin, Vector vecAngles, CBaseEntity* pOwner);
 	void EXPORT BFGBallTouch(CBaseEntity* pOther);
 	void EXPORT BFGBallThink(void);
-	void BFGTracer(void);
+	void BFGTracer(Vector Angles);
 	static CRocket* CreateBFGImpact(Vector vecOrigin);
 	void EXPORT BFGImpactThink(void);
 

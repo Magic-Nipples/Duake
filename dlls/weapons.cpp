@@ -607,7 +607,7 @@ void CRocket::BFGBallThink(void)
 		pev->nextthink = gpGlobals->time + 0.15f;
 
 	if(pev->frame == 3)
-		BFGTracer();
+		BFGTracer(pev->angles);
 
 	if (pev->iuser1 == 0)
 	{
@@ -743,7 +743,7 @@ void CRocket::autoaimTracer(Vector origin, Vector vForward, Vector vRight, Vecto
 	}
 }
 
-void CRocket::BFGTracer(void)
+void CRocket::BFGTracer(Vector Angles)
 {
 	Vector rforward, rright, rup;
 	CBaseEntity* pPlayer = UTIL_PlayerByIndex(1);
@@ -751,7 +751,8 @@ void CRocket::BFGTracer(void)
 	if (!pPlayer)
 		return;
 
-	Vector whateven = pPlayer->pev->v_angle;
+	Vector whateven = Angles;//pPlayer->pev->v_angle;
+	whateven.x = 0; // level out tracers;
 	whateven.y -= 47;
 
 	for (int i = 0; i < 40; i++)
